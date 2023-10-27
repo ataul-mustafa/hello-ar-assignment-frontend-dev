@@ -15,11 +15,14 @@ export const sendOtp = async(phNo) =>{
 
     if(data.status == 200){
         toast.success(data.data.message); //showing success toast if request sucessfully sent
-        return data.data;
+        // return data.data;
     }
 
+    return data;
+
     }catch(error){
-        toast.error(error);
+        console.log(error)
+        toast.error("Enter a valid phone no");
     }
 }
 
@@ -44,17 +47,29 @@ function SignIn() {
     const submitHandler = async(e) =>{
         e.preventDefault();
 
-        if(!phoneNo || (phoneNo.toString()).length < 12){
+        if(!phoneNo){
             toast.error("Enter a valid phone no") //showing error toast if not valid phone no
 
         }else {
 
-            const response = await sendOtp(phoneNo); //sending otp if a valid phone no
-            sendDataForVerification(response.requestId, phoneNo);
-            // console.log(response)
+            try{
+                const response = await sendOtp(phoneNo); //sending otp if a valid phone no
+            if(response.status == 200){
+                sendDataForVerification(response.data.requestId, phoneNo);
+            } else {
+                toast.error("Enter correct phone no.")
+            }
+            }catch(error){
+                // navigate("/login")
+                console.log(error)
+                // toast.error(error.message)
+            }
+            
+            }
+            
         }
         
-    }
+    
     const handleOnChange = (value, country) => {
         setPhoneNo(value);
       };

@@ -65,7 +65,7 @@ const OtpVerification = () => {
 
     const resendOTP = async() => {
         const resp = await sendOtp(verifData.phoneNo);
-        setVerifData({...verifData, requestId: resp.requestId})
+        setVerifData({...verifData, requestId: resp.data.requestId})
     }
 
     const funOTPVerif = async(e)=>{
