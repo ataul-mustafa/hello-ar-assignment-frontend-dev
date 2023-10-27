@@ -210,10 +210,12 @@ const Songs = () => {
             </Popup>
 
             <div className="song-list">
+                <div className="headingCon">
                 <div className="headingss">
                     <div>SONG NAME</div>
                     <div>SOURCE</div>
                     <div>ADDED ON</div>
+                </div>
                 </div>
                 {songs.map((song, index) => (
                     <div key={index} className="song-item">
