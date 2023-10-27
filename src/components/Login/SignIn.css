@@ -1,0 +1,58 @@
+.signInContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInContainer > form {
+    margin: auto;
+    width: 414px;
+    height: 238px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.signInContainer > form > h1{
+    font-size: 38px;
+    font-weight: 500;
+    color: #552583;
+}
+
+.signInContainer > form > p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #101920;
+}
+
+.signInContainer > form > button {
+    width: 98.5%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    background-color: #552583;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 2px;
+}
+
+.signInContainer > form > button:hover{
+    background-color: #3c1363;
+}
+
+
+
+
+.react-tel-input input[type="tel"] {
+    width: 407px;
+    height: 60px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 8px;
+} 
+
